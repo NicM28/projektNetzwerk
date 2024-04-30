@@ -23,7 +23,7 @@
 - bashrc file bearbeiten je nach Präferenzen
 ## Swap Größe ändern
 
-1. `/etc/dphys-swapfile` > dphys-swapfile öffnen
+1. `nano /etc/dphys-swapfile` > dphys-swapfile öffnen
 2. swapfactor auf 1 ändern
 3. swapsize kommentieren
 4. file speichern
