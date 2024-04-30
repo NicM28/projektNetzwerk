@@ -11,6 +11,12 @@
 8. Zum Tab Dienste wechseln und SSH aktivieren
 9. OS brennen
 
+## Verbinden mit Raspberry
+
+1. SD Karte in Raspberry einfügen
+2. Raspberry an Pingen 'ping -4 host-t07x'
+3. Über ssh mit Raspberry verbinden 'ssh user@ip'
+
 # Raspberry einstellungen
 
 - Copy bashrc file 'cp bashrc bashrc-SAVE'
