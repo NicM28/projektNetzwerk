@@ -14,23 +14,23 @@
 ## Verbinden mit Raspberry
 
 1. SD Karte in Raspberry einfügen
-2. Raspberry an Pingen 'ping -4 host-t07x'
-3. Über ssh mit Raspberry verbinden 'ssh user@ip'
+2. Raspberry an Pingen `ping -4 host-t07x`
+3. Über ssh mit Raspberry verbinden `ssh user@ip`
 
 ## Raspberry Einstellungen
 
-- Copy bashrc file 'cp bashrc bashrc-SAVE'
+- Copy bashrc file `cp bashrc bashrc-SAVE`
 - bashrc file bearbeiten je nach Präferenzen
 ## Swap Größe ändern
 
-1. '/etc/dphys-swapfile' > dphys-swapfile öffnen
+1. `/etc/dphys-swapfile` > dphys-swapfile öffnen
 2. swapfactor auf 1 ändern
 3. swapsize kommentieren
 4. file speichern
-5. 'service dphys-swapfile restart'
+5. `service dphys-swapfile restart`
 
 ## Raspberry Config anpassen
 
-1. 'raspi-config' in die Console eingeben
-2. interface options auswählen
-3. serial port aktivieren
+1. `raspi-config` in die Konsole eingeben
+2. interface Options auswählen
+3. Serial Port aktivieren
