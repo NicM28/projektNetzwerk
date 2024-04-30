@@ -17,11 +17,11 @@
 2. Raspberry an Pingen 'ping -4 host-t07x'
 3. Über ssh mit Raspberry verbinden 'ssh user@ip'
 
-# Raspberry einstellungen
+## Raspberry Einstellungen
 
 - Copy bashrc file 'cp bashrc bashrc-SAVE'
 - bashrc file bearbeiten je nach Präferenzen
-## Swap grösse ändern
+## Swap Größe ändern
 
 1. '/etc/dphys-swapfile' > dphys-swapfile öffnen
 2. swapfactor auf 1 ändern
