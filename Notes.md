@@ -7,3 +7,8 @@ free -h // speicher
 /etc/dphys-swapfile
 Swapfactor auf 1 ändern
 swapsize auskommentieren
+service dphys-swapfile restart // zum änderungen 
+
+raspi-config 
+interface Options
+enable serial Port
