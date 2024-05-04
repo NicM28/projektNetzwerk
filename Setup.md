@@ -34,3 +34,53 @@
 1. `raspi-config` in die Konsole eingeben
 2. interface Options auswählen
 3. Serial Port aktivieren
+
+
+## Raspberry Netzwerk-Konfig anpassen
+
+zwei Files in /etc/systemd/network erstellen:
+
+10-br0.netdev
+```
+[NetDev]
+Description=Bridge for LXC-Containers
+Name=br0
+Kind=bridge
+```
+
+10-br0.network
+```
+[Match]
+Name=br0
+
+[Network]
+Address=10.7.X.1/16
+DHCP=no
+LinkLocalAddressing=no
+IPForward=ipv4
+```
+
+X => a = 1, b = 2, c = 3
+
+## Schlüsselpaar 
+
+### Generieren
+
+1. Ordner erstellen: /opt/nos
+2. darin ausführen: ```sudo ssh-keygen```
+3. beim Filename ```host-t07x``` angeben (x = a/b/c)
+4. keine passphrase verwenden
+
+zwei Dateien wurden generiert
+
+### Hochladen
+
+1. Public Key vom Raspy herunterladen
+2. Umbenennen zu Textdatei host-t07a.txt
+3. Diese Datei bei Bruno hochladen: https://elad.ch/
+   Gruppen -> L-TIN-22-T-a -> Ordner
+
+## port zeugs
+
+Dieser Befehl kann ausgeführt werden, sobald unser SSH-Key von Bruno hinzugefügt wurde.
+`ssh -p 1022 -i host-t07x -o Tunnel=ethernet -w 0 -T teams@vpn.t-nos.ch`
