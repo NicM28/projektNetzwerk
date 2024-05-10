@@ -35,7 +35,6 @@
 2. interface Options auswählen
 3. Serial Port aktivieren
 
-
 ## Raspberry Netzwerk-Konfig anpassen
 
 zwei Files in /etc/systemd/network erstellen:
@@ -84,3 +83,68 @@ zwei Dateien wurden generiert
 
 Dieser Befehl kann ausgeführt werden, sobald unser SSH-Key von Bruno hinzugefügt wurde.
 `ssh -p 1022 -i host-t07x -o Tunnel=ethernet -w 0 -T teams@vpn.t-nos.ch`
+
+## tap0 zeugs
+
+`cp 10-br0.network 10-tap0.network`
+
+```
+# 10-tap0.network  
+  
+[Match]  
+Name=tap0  
+   
+[Network]  
+Address=10.10.7.1/16  
+DHCP=no  
+LinkLocalAddressing=no  
+IPForward=ipv4
+```
+
+## nos VPN Service
+
+neues File:
+`/opt/nos/nos-vpn.service`
+
+```
+[Unit]  
+After=network.target network-online.target auditd.service  
+Wants=network-online.target  
+ConditionPathExists=!/etc/nos_not_to_be_run  
+  
+[Service]  
+Type=simple  
+Environment="NOS_VPN_TAPNR=0"  
+EnvironmentFile=-/etc/default/nos  
+ExecStart=/usr/bin/ssh $NOS_VPN_PORT -i $NOS_VPN_IDENTITY -  
+o Tunnel=ethernet -w $NOS_VPN_TAPNR -T $NOS_VPN_SERVER  
+KillMode=process  
+Restart=on-failure  
+RestartPreventExitStatus=255  
+  
+[Install]  
+WantedBy=multi-user.target
+```
+
+neues File:
+`/etc/default/nos`
+
+Achtung, ist noch nicht korrekt, Werte müssen individualisiert werden.
+
+```
+# Configuration NOS  
+# =================  
+  
+# VPN  
+# ---  
+  
+# SSH username@hostname  
+#NOS_VPN_SERVER="teams@vpn.t-nos.ch"  
+NOS_VPN_SERVER="teams@185.142.213.23"  
+  
+# SSH Port  
+NOS_VPN_PORT="-p 1022"$  
+  
+# SSH Identity-File (private key) for authentication  
+NOS_VPN_IDENTITY="/opt/nos/host-t07c"
+```
