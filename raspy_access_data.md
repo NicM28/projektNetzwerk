@@ -4,5 +4,5 @@ Benutzername: pbu
 Password: pbu
 # Nicola
 IP: 10.100.6.104
-Benutzername: Nicola
+Benutzername: nicola
 Password: nic123
