@@ -6,3 +6,7 @@ Password: pbu
 IP: 10.100.6.104
 Benutzername: nicola
 Password: nic123
+# Simon
+IP: 10.100.2.185
+Benutzername: pi
+Password: pi
