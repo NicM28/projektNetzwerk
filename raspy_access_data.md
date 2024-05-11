@@ -5,4 +5,4 @@ Password: pbu
 # Nicola
 IP: 10.100.6.104
 Benutzername: Nicola
-Password: Bagowu47
+Password: nic123
