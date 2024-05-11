@@ -4,7 +4,7 @@
 3. [Network](doc/3_Network.md)
 	1. [br0](network/br0.md)
 	2. [tap0](network/tap0.md)
-4. [NOS VPN Service](doc/4_NOS_VPN_Service.md)
-5. [SSH Connection](doc/5_SSH_Connection.md)
+4. [SSH Connection Test](4_SSH_Connection_Test.md)
+5. [NOS VPN Service](5_NOS_VPN_Service.md)
 
 ![Overview](assets/diagram.svg)

@@ -1,3 +1,5 @@
+Damit wir nicht die SSH Verbindung nicht jedesmal von Hand öffnen müssen, registrieren wir das ganze als Service und aktivieren diesen damit er automatisch gestartet wird.
+
 ```
 # /opt/nos/nos-vpn.service
 
@@ -12,7 +14,7 @@ ConditionPathExists=!/etc/nos_not_to_be_run
 Type=simple  
 Environment="NOS_VPN_TAPNR=0"  
 EnvironmentFile=-/etc/default/nos  
-ExecStart=/usr/bin/ssh $NOS_VPN_PORT -i $NOS_VPN_IDENTITY -o Tunnel=ethernet -w $NOS_VPN_TAPNR -T $NOS_VPN_SERVER  
+ExecStart=/usr/bin/ssh -p $NOS_VPN_PORT -i $NOS_VPN_IDENTITY -o Tunnel=ethernet -w $NOS_VPN_TAPNR -T $NOS_VPN_SERVER  
 KillMode=process
 Restart=on-failure
 RestartPreventExitStatus=255
@@ -44,7 +46,7 @@ NOS_TEAM_MEMBER=${MEMBERS[$(($NOS_TEAM_MEMBER_NO - 1))]}
 NOS_VPN_SERVER="teams@185.142.213.23"  
   
 # SSH Port  
-NOS_VPN_PORT="-p 1022"$  
+NOS_VPN_PORT=1022
   
 # SSH Identity-File (private key) for authentication  
 NOS_VPN_IDENTITY="/opt/nos/host-t07x"
@@ -52,4 +54,18 @@ NOS_VPN_IDENTITY="/opt/nos/host-t07x"
 ```
 x = a / b / c
 
+Das erste mal muss das Zertifikat geladen werden. Dazu öffnen wir eine ssh verbindung zum server und bestätigen mit `yes` dass wir den fingeprint speichern möchten. Bei der Passwort abfrage können wir den Befehl abbrechen.
+
+`ssh -p 1022 teams@185.142.213.23`
+
+Anschliessend kann der Service dauerhaft enabled werden.
+
 `systemctl enable /opt/nos/nos-vpn.service`
+
+Der VPN Service kann mit folgendem Befehl gestartet, neugestartet und abgefragt werden.
+
+```
+service nos-vpn start
+service nos-vpn restart
+service nos-vpn status
+```
