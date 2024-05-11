@@ -82,7 +82,7 @@ zwei Dateien wurden generiert
 ## port zeugs
 
 Dieser Befehl kann ausgeführt werden, sobald unser SSH-Key von Bruno hinzugefügt wurde.
-`ssh -p 1022 -i host-t07x -o Tunnel=ethernet -w 0 -T teams@vpn.t-nos.ch`
+`ssh -p 1022 -i /opt/nos/host-t07x -o Tunnel=ethernet -w 0 -T teams@vpn.t-nos.ch`
 
 ## tap0 zeugs
 

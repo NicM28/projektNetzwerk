@@ -37,4 +37,8 @@ pubkey hochladen auf olat
 `ssh -p 1022 -i host-t07b -o Tunnel=ethernet -w 0 -T teams@vpn.t-nos.ch`
 ausführen
 zweite shell öffnen und `tap0` eingeben 
+
+
+ssh config unter:
+`/etc/ssh/sshd_config`
  
