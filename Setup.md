@@ -39,16 +39,18 @@
 
 zwei Files in /etc/systemd/network erstellen:
 
-10-br0.netdev
 ```
+# /etc/systemd/network/10-br0.netdev
+
 [NetDev]
 Description=Bridge for LXC-Containers
 Name=br0
 Kind=bridge
 ```
 
-10-br0.network
 ```
+# /etc/systemd/network/10-br0.network
+
 [Match]
 Name=br0
 
@@ -89,24 +91,25 @@ Dieser Befehl kann ausgeführt werden, sobald unser SSH-Key von Bruno hinzugefü
 `cp 10-br0.network 10-tap0.network`
 
 ```
-# 10-tap0.network  
+# /etc/systemd/network/10-tap0.network
   
 [Match]  
 Name=tap0  
    
 [Network]  
-Address=10.10.7.1/16  
+Address=10.10.7.x/16  
 DHCP=no  
 LinkLocalAddressing=no  
 IPForward=ipv4
 ```
-
+x = a / b / c
 ## nos VPN Service
 
 neues File:
-`/opt/nos/nos-vpn.service`
 
 ```
+# /opt/nos/nos-vpn.service
+
 [Unit]  
 After=network.target network-online.target auditd.service  
 Wants=network-online.target  
@@ -129,9 +132,9 @@ WantedBy=multi-user.target
 neues File:
 `/etc/default/nos`
 
-Achtung, ist noch nicht korrekt, Werte müssen individualisiert werden.
-
 ```
+# /etc/default/nos
+
 # Configuration NOS  
 # =================  
   
@@ -146,5 +149,6 @@ NOS_VPN_SERVER="teams@185.142.213.23"
 NOS_VPN_PORT="-p 1022"$  
   
 # SSH Identity-File (private key) for authentication  
-NOS_VPN_IDENTITY="/opt/nos/host-t07c"
+NOS_VPN_IDENTITY="/opt/nos/host-t07x"
 ```
+x = a / b / c
