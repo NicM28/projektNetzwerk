@@ -1,10 +1,10 @@
 ![Overview](assets/diagram.svg)
 
 ## Inhalt
-[1. Base Setup](doc/1 - Base Setup.md)
-[2. SSH Keys](doc/2 - SSH Keys.md)
-[3. Network](doc/3 - Network.md)
-	[3.1. br0](doc/network/br0.md)
-	[3.2 tap0](doc/network/tap0.md)
-[4. NOS VPN Service](doc/4 - NOS VPN Service.md)
-[5. SSH Connection tap0](doc/5 - SSH Connection tap0.md)
+1. [Base Setup](doc/1_Base_Setup.md)
+2. [SSH Keys](doc/2_SSH_Keys.md)
+3. [Network](doc/3_Network.md)
+	1. [br0](network/br0.md)
+	2. [tap0](network/tap0.md)
+4. [NOS VPN Service](doc/4_NOS_VPN_Service.md)
+5. [SSH Connection](doc/5_SSH_Connection.md)
