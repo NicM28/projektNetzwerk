@@ -33,3 +33,9 @@ x = a / b / c
 ripd=yes
 ...
 ```
+
+Anschliessend frr und Netzwerk Service neustarten.
+```
+service frr restart
+service systemd-networkd restart
+```
