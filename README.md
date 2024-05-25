@@ -7,7 +7,7 @@
 4. [SSH Connection Test](4_SSH_Connection_Test.md)
 5. [NOS VPN Service](5_NOS_VPN_Service.md)
 6. [RIP Setup](doc/6_RIP_Setup.md)
-7. [LXC](doc/7_LXC)
+7. [LXC](7_LXC_Setup.md)
 	1. [lxc-debian+.patch](doc/lxc-files/lxc-debian+.patch)
 	2. [lxc-debian+.patch.sha256](doc/lxc-files/lxc-debian+.patch.sha256)
 	3. [nos-net](doc/lxc-files/nos-net)
