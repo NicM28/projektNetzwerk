@@ -1,5 +1,5 @@
 ````
-# nos.nft
+# /opt/nos/nos.nft
 # -------
 
 add table nos

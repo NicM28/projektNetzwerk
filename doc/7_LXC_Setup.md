@@ -41,7 +41,7 @@ lxc.start.auto = 0
 lxc.start.order = 99
 
 lxc.net.0.type = veth
-lxc.net.0.hwaddr = 00:16:3e:48:98:18  //m
+lxc.net.0.hwaddr = 00:16:3e:48:98:18
 lxc.net.0.link = br0
 lxc.net.0.flags = up
 lxc.net.0.ipv4.address = 10.7.x.99/16
@@ -67,7 +67,7 @@ lxc.pty.max = 1024
 
 Eigener Host Ping möglich
 `ping 10.7.x.1
-`ping 8.8.8.8` Packt lose sollte 100% sein
+`ping 8.8.8.8` Packt le sollte 100% sein
 `exit`
 
 `ifconfig`
