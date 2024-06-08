@@ -8,7 +8,7 @@
 #lxc.include = /usr/share/lxc/config/nesting.conf  
 # (Be aware this has security implications)  
   
-lxc.start.auto = 0  
+lxc.start.auto = 1
 lxc.start.order = 10  
   
 lxc.net.0.type = veth  
