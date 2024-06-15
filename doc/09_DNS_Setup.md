@@ -5,7 +5,7 @@ Gemäss [[07_LXC_Setup]] einen Container namens "dnsx" aufsetzen, X mit Nummer e
 Achtung:
 
 1. Folgendes Create-Command muss verwendet werden: `lxc-create -n dnsx -t debian+ -- -r bookworm --packages=vim-tiny,nano,iputils-ping,bind9,bind9utils,bind9-doc` X mit Nummer ersetzen.
-2. Diese File sollte für config verwendet werden: [[config]]
+2. Diese File sollte für config verwendet werden: [[dns config]]
 
 # DNS einrichten
 
