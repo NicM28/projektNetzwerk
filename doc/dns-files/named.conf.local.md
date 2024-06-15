@@ -16,12 +16,12 @@ zone "test3.team07.t-nos.ch." {
 zone "team07.t-nos.ch." {  
        type slave;  
        file "/var/lib/bind/slave/db.ch.t-nos.team07";  
-       masters { 10.7.1.10; 10.7.2.10; };  
+       masters { 10.7.1.10; };  
 };  
   
 zone "test.team07.t-nos.ch." {  
        type slave;  
        file "/var/lib/bind/slave/db.ch.t-nos.team07.test";  
-       masters { 10.7.1.10; 10.7.2.10; };  
+       masters { 10.7.2.10; };  
 };
 ```
