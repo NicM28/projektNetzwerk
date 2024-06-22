@@ -36,4 +36,8 @@ user1           IN      A       10.7.1.12
 user2           IN      A       10.7.2.12
 user3           IN      A       10.7.3.12
 
+; Service
+_ldap._tcp	    IN	    SRV	    10 50 389 ldap1
+                IN	    SRV	    10 50 389 ldap2
+		        IN	    SRV	    10 50 389 ldap3
 ```

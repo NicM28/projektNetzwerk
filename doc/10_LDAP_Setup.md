@@ -8,3 +8,15 @@ Achtung:
 
 1. Folgendes Create-Command muss verwendet werden: `lxc-create -n ldapx -t debian+ -- -r bookworm --packages=vim-tiny,nano` X mit Nummer ersetzen.
 2. Diese File sollte für config verwendet werden: [[ldap config]]
+3. Anschliessend Installation auf den ldap container nach Anleitung [https://elad.ch/gitblit/blob/L-TIN-22-T-a!4-NOS!team00a.git/master/LDAP-Apache-Directory.md]
+
+Über Apache Directory Studio eine neue Partition anlegen:
+1. Rechtsklick auf die Connection
+2. Open Configuration
+3. Tab Partitions auswählen
+4. Neue Partition hinzufügen
+	ID = Team07
+	Suffix = dc=team07,dc=t-nos,dc=ch
+5. Auf der Partition das Attribut description setzen
+6. Tab Replication auswählen
+7. Neue Replikation hinzufügen und mit Standarteinstellungen speichern
