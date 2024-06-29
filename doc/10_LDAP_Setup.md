@@ -34,3 +34,19 @@ Password: secret
 5. Auf der Partition das Attribut description setzen
 6. Tab Replication auswählen
 7. Neue Replikation hinzufügen und mit Standarteinstellungen speichern
+8. Bei ou=schema reloaden
+9. cn=nis & cn=samba anwählen und m-disabled auf FALSE ändern
+10. ldap neu starten
+
+Check Account in unserem Namespace erstellen
+```
+Object Classes: person, posixAccount, shadowAccount
+cn: check
+gecos: check
+gidNumber: 100
+uidNumber: 1000
+homeDirectory: /home/check
+loginShell: /bin/bash
+uid: check
+userPassword: checker (CRYPT-SHA-512)
+```
