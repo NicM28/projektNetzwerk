@@ -10,6 +10,20 @@ Achtung:
 2. Diese File sollte für config verwendet werden: [[ldap config]]
 3. Anschliessend Installation auf den ldap container nach Anleitung [https://elad.ch/gitblit/blob/L-TIN-22-T-a!4-NOS!team00a.git/master/LDAP-Apache-Directory.md]
 
+Via Apache Directory Studio einloggen:
+1. Route Eintrag auf Laptop erstellen
+```sh
+# Linux
+ip route add 10.7.0.0/16 via [raspi ip]
+```
+2. Connection erstellen in Apache Directory Studio
+```
+Hostname: 10.7.x.11
+Port: 10389
+User: uid=admin,ou=system
+Password: secret
+```
+
 Über Apache Directory Studio eine neue Partition anlegen:
 1. Rechtsklick auf die Connection
 2. Open Configuration
