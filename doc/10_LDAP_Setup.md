@@ -8,13 +8,23 @@ Achtung:
 
 1. Folgendes Create-Command muss verwendet werden: `lxc-create -n ldapx -t debian+ -- -r bookworm --packages=vim-tiny,nano` X mit Nummer ersetzen.
 2. Diese File sollte für config verwendet werden: [[ldap config]]
-3. Anschliessend Installation auf den ldap container nach Anleitung [https://elad.ch/gitblit/blob/L-TIN-22-T-a!4-NOS!team00a.git/master/LDAP-Apache-Directory.md]
+3. DNS Einträge richtig machen
+```
+# /etc/resolv.conf
+nameserver 10.7.1.10
+nameserver 10.7.2.10
+nameserver 10.7.3.10
+```
+4. Anschliessend Installation auf den ldap container nach Anleitung [https://elad.ch/gitblit/blob/L-TIN-22-T-a!4-NOS!team00a.git/master/LDAP-Apache-Directory.md]
 
 Via Apache Directory Studio einloggen:
 1. Route Eintrag auf Laptop erstellen
 ```sh
 # Linux
 ip route add 10.7.0.0/16 via [raspi ip]
+
+# Windows
+route add 10.7.0.0 mask 255.255.0.0 [raspi ip]
 ```
 2. Connection erstellen in Apache Directory Studio
 ```
@@ -40,7 +50,7 @@ Password: secret
 
 Check Account in unserem Namespace erstellen
 ```
-Object Classes: person, posixAccount, shadowAccount
+Object Classes: inetOrgPerson, posixAccount, shadowAccount
 cn: check
 gecos: check
 gidNumber: 100
