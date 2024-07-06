@@ -1,5 +1,3 @@
-Gluster Filesystem
-==================
 
 https://www.gluster.org/
 

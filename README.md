@@ -13,6 +13,10 @@
 	3. [nos-net](doc/lxc-files/nos-net)
 	4. [nos.nft](doc/lxc-files/nos.nft)
 8. [NOS_Setup](08_NOS_Setup.md)
+9. [DNS_Setup](09_DNS_Setup.md)
+10. [LDAP_Setup](10_LDAP_Setup.md)
+11. [USER_Setup](11_USER_Setup.md)
+12. [GLUSTER_FS_Setup](12_GLUSTER_FS_Setup.md)
 	
 
 
