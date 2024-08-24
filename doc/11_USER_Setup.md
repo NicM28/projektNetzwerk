@@ -8,8 +8,15 @@ nameserver 10.7.3.10
 
 Installation
 ------------
+Gemäss [[07_LXC_Setup]] einen Container namens "ldapx" aufsetzen, X mit Nummer ersetzen.
 
-	apt install samba nullmailer
+Achtung:
+
+1. Folgendes Create-Command muss verwendet werden: `lxc-create -n userx -t debian+ -- -r bookworm --packages=vim-tiny,nano` X mit Nummer ersetzen.
+2. Folgende Config für den User-Container verwenden: [[USER Config]]
+3. Auf dem Container samba nullmailer installieren: 
+   `apt install samba nullmailer
+   
 
 Konfiguration
 -------------

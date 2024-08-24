@@ -16,6 +16,7 @@ nameserver 10.7.2.10
 nameserver 10.7.3.10
 ```
 4. Anschliessend Installation auf den ldap container nach Anleitung [https://elad.ch/gitblit/blob/L-TIN-22-T-a!4-NOS!team00a.git/master/LDAP-Apache-Directory.md]
+5. Nicht vergessen, den apacheds zu starten! `service apacheds start`
 
 Via Apache Directory Studio einloggen:
 1. Route Eintrag auf Laptop erstellen
